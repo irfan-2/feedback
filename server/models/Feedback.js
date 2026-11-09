@@ -6,7 +6,7 @@ const feedbackSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    feedback: {
+    message: {
         type: String,
         required: true,
         trim: true
