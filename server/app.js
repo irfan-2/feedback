@@ -2,7 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 dotenv.config()
 import "./config/database.js"
-import feedbackModel from "./models/Feedback.js"
+import feedbackRouter from "./controllers/feedback.js"
 
 const app = express()
 
@@ -22,6 +22,8 @@ app.get("health", async (req,res) =>{
         "msg" : "apis are healthy"
     })
 })
+
+app.use("/feedback", feedbackRouter)
 
 app.listen(port, () =>{
     console.log("server is running");
