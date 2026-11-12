@@ -9,16 +9,16 @@ const app = express()
 
 app.use(cors({
     origin:[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173"
+        "http://localhost:5174",
+        "http://127.0.0.1:5174"
     ]
 }))
 
 app.use(express.json())
 
-const port = process.env.port
+const port = process.env.PORT
 
-app.get("health", async (req,res) =>{
+app.get("/health", async (req,res) =>{
     res.status(200).json({
         "msg" : "apis are healthy"
     })
